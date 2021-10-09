@@ -1,0 +1,19 @@
+{
+  "name": "chuggbot",
+  "version": "1.0.0",
+  "description": "Chegg + Discord = ChuggBot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arukshpatel/ChuggBot.git"
+  },
+  "author": "Aruksh Patel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arukshpatel/ChuggBot/issues"
+  },
+  "homepage": "https://github.com/arukshpatel/ChuggBot#readme"
+}
