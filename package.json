@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/arukshpatel/ChuggBot#readme",
   "dependencies": {
-    "discord": "^0.8.2"
+    "discord": "^0.8.2",
+    "typescript": "^4.4.3"
   }
 }
