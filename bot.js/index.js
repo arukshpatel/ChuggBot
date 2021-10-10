@@ -13,4 +13,4 @@ client.on("ready", function () {
 client.on("message", function (msg) {
     readMSG(msg);
 });
-client.login(String(process.env.TOKEN));
+client.login(process.env.TOKEN);

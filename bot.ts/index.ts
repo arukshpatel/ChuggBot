@@ -17,4 +17,4 @@ client.on("message", (msg: any) => {
     readMSG(msg);
 })
 
-client.login(String(process.env.TOKEN))
+client.login(process.env.TOKEN)
