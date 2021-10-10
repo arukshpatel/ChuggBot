@@ -2,7 +2,7 @@
   "name": "chuggbot",
   "version": "1.0.0",
   "description": "Chegg + Discord = ChuggBot",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/arukshpatel/ChuggBot/issues"
   },
-  "homepage": "https://github.com/arukshpatel/ChuggBot#readme"
+  "homepage": "https://github.com/arukshpatel/ChuggBot#readme",
+  "dependencies": {
+    "discord": "^0.8.2"
+  }
 }
