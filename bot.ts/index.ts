@@ -1,22 +1,20 @@
 const Discord = require("discord.js")
 
-const client = Discord.Client()
+const client = new Discord.Client({
+    intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
+})
 
 function readMSG(msg: string) {
     console.log(msg);
-    /*
-    conso
-    */
 }
 
-client.on("ready", (msg: any) => {
+client.on("ready", () => {
     console.log('Loggin in as ${client.user.tag}!')
-    msg.reply("It works")
+    // msg.reply("It works")
 })
 
 client.on("message", (msg: any) => {
     readMSG(msg);
 })
 
-
-client.login(process.env.TOKEN)
+client.login(String(process.env.TOKEN))
