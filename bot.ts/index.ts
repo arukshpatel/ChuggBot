@@ -8,7 +8,7 @@ const client = new Discord.Client({
 })
 
 client.on("ready", (msg: any) => {
-    console.log('ChuggBot Ready! :)' + msg)
+    console.log('ChuggBot logged in as ' + msg.user.tag)
     // msg.reply("It works")
 })
 

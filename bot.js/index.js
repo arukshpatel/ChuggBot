@@ -6,7 +6,7 @@ var client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
 });
 client.on("ready", function (msg) {
-    console.log('ChuggBot Ready! :)' + msg);
+    console.log('ChuggBot logged in as ' + msg.user.tag);
     // msg.reply("It works")
 });
 client.on("message", function (msg) {
