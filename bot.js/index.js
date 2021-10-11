@@ -1,4 +1,6 @@
 "use strict";
+require('dotenv').config();
+var TOKEN = String(process.env.TOKEN);
 var Discord = require("discord.js");
 var client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
@@ -13,4 +15,4 @@ client.on("ready", function () {
 client.on("message", function (msg) {
     readMSG(msg);
 });
-client.login(process.env.TOKEN);
+client.login(TOKEN);

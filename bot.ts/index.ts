@@ -1,4 +1,7 @@
-const Discord = require("discord.js")
+require('dotenv').config();
+
+const _TOKEN: string = String(process.env.TOKEN);
+const Discord = require("discord.js");
 
 const client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
@@ -17,4 +20,4 @@ client.on("message", (msg: any) => {
     readMSG(msg);
 })
 
-client.login(process.env.TOKEN)
+client.login(_TOKEN);
