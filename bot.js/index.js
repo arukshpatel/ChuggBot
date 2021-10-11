@@ -1,18 +1,17 @@
 "use strict";
 require('dotenv').config();
-var TOKEN = String(process.env.TOKEN);
+var _TOKEN = String(process.env.TOKEN);
 var Discord = require("discord.js");
 var client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
 });
-function readMSG(msg) {
-    console.log(msg);
-}
-client.on("ready", function () {
-    console.log('Loggin in as ${client.user.tag}!');
+client.on("ready", function (msg) {
+    console.log('ChuggBot Ready! :)' + msg);
     // msg.reply("It works")
 });
 client.on("message", function (msg) {
-    readMSG(msg);
+    if (msg.startsWith('$')) {
+        console.log(msg);
+    }
 });
-client.login(TOKEN);
+client.login(_TOKEN);

@@ -7,17 +7,15 @@ const client = new Discord.Client({
     intents: [Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGES]
 })
 
-function readMSG(msg: string) {
-    console.log(msg);
-}
-
-client.on("ready", () => {
-    console.log('Loggin in as ${client.user.tag}!')
+client.on("ready", (msg: any) => {
+    console.log('ChuggBot Ready! :)' + msg)
     // msg.reply("It works")
 })
 
-client.on("message", (msg: any) => {
-    readMSG(msg);
+client.on("message", (msg: string) => {
+    if (msg.startsWith('$')) {
+        console.log(msg);
+    }
 })
 
 client.login(_TOKEN);
