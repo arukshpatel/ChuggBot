@@ -118,3 +118,6 @@ dist
 # Ignore all local history of files
 .history
 .ionide
+
+### Local Files
+response.txt
