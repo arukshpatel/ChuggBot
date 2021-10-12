@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+import { fetchURL } from "./backend";
+
 const _TOKEN: string = String(process.env.TOKEN);
 const Discord = require("discord.js");
 
@@ -26,11 +28,19 @@ client.on("ready", (msg: any) => {
     console.log("ChuggBot logged in as " + msg.user.tag);
 });
 
-client.on("messageCreate", (msg: any) => {
-    console.log(msg);
+/**
+ * Responds to messages from channel and direct message
+ */
+client.on("messageCreate", async (msg: any) => {
+    if (!msg.author.bot && msg.content.startsWith("~")) {
+        //splits the msg into an array of ['',{help-code},{url}]
+        let msg_parsed: string = msg.content.split(/[~,\s++]/);
 
-    //FIXME
-    msg.reply("At the moment, I cannot do anything. Please mix me");
+        let response = await fetchURL(msg_parsed[2]);
+        msg.reply("Let me look into it");
+        msg.reply(response);
+        // msg.channel.send(response);
+    }
 });
 
 client.login(_TOKEN);
