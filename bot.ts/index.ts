@@ -1,9 +1,9 @@
 require("dotenv").config();
+import { route } from "./routes";
 
-import { fetchURL } from "./backend";
-
-const _TOKEN: string = String(process.env.TOKEN);
 const Discord = require("discord.js");
+// const Backend = require("./backend");
+const _TOKEN: string = String(process.env.TOKEN);
 
 const client = new Discord.Client({
     /*
@@ -24,21 +24,22 @@ const client = new Discord.Client({
     partials: ["MESSAGE", "CHANNEL"],
 });
 
+/**
+ * Shows the connection was successful with discord.
+ */
 client.on("ready", (msg: any) => {
-    console.log("ChuggBot logged in as " + msg.user.tag);
+    console.log("Bot connected as " + msg.user.tag);
 });
 
 /**
  * Responds to messages from channel and direct message
  */
-client.on("messageCreate", async (msg: any) => {
+client.on("messageCreate", (msg: any) => {
     if (!msg.author.bot && msg.content.startsWith("~")) {
         //splits the msg into an array of ['',{help-code},{url}]
-        let msg_parsed: string = msg.content.split(/[~,\s++]/);
-
-        let response = await fetchURL(msg_parsed[2]);
-        msg.reply("Let me look into it");
-        msg.reply(response);
+        let args: string[] = msg.content.split(/[~,\s++]/);
+        console.group(args);
+        route(msg, args);
         // msg.channel.send(response);
     }
 });
