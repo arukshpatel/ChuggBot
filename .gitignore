@@ -104,7 +104,8 @@ dist
 .tern-port
 
 # VisualStudioCode
-.vscode/*
+.vscode/
+.vscode/*/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -120,4 +121,5 @@ dist
 .ionide
 
 ### Local Files
-response.txt
+response*
+test*
