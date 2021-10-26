@@ -120,6 +120,9 @@ dist
 .history
 .ionide
 
+# IntelliJ
+.idea
+
 ### Local Files
 response*
 test*

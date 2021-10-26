@@ -1,8 +1,8 @@
-export const defaultResponse: string =
+export const DefaultResponse: string =
     "Please enter valid argument. Type `~help / ~help-code(s)` for more info";
 
-export const helpCodes: string =
-    "Commands should be the following format:\n" +
+export const HelpCodes: string =
+    "Commands should in be the following format:\n" +
     "`~[help-code] [corresponding-text]`\n" +
     "List of Help Codes: \n" +
     "```~chugg [URL]\n" +
