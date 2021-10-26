@@ -23,7 +23,7 @@ const client = new Discord.Client({
      You have to include partials
      to receive messages from Channel and DM
      */
-    partials: ["MESSAGE", "CHANNEL"],
+    partials: ["USER", "MESSAGE", "CHANNEL"],
 });
 
 /**
